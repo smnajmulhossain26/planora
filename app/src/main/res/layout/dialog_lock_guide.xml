@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Allow permissions" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textStyle="bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:alpha="0.8" android:text="App Locker কাজ করার জন্য ২টি অনুমতি লাগে। নিচের ধাপগুলো একটার পর একটা করুন। দুটোই চালু হলে লক নিজে থেকেই অন হয়ে যাবে।"/>
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:cardCornerRadius="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                    <TextView android:layout_width="30dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_circle" android:text="1" android:textColor="?attr/colorOnPrimary" android:textStyle="bold"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Usage Access" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvG1Status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:lineSpacingExtra="3dp" android:text="১) নিচের “Open settings” বাটন চাপুন।&#10;২) তালিকা থেকে “Planora” খুঁজে তাতে চাপুন।&#10;৩) “Permit usage access” সুইচটি অন (চালু) করুন।&#10;৪) ব্যাক বাটন চেপে Planora-তে ফিরে আসুন।"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnG1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Open settings"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:cardCornerRadius="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                    <TextView android:layout_width="30dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_circle" android:text="2" android:textColor="?attr/colorOnPrimary" android:textStyle="bold"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Display over other apps" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvG2Status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:lineSpacingExtra="3dp" android:text="১) নিচের “Open settings” বাটন চাপুন।&#10;২) তালিকা থেকে “Planora” সিলেক্ট করুন।&#10;৩) “Allow display over other apps” অন করুন।&#10;৪) ব্যাক বাটন চেপে Planora-তে ফিরে আসুন।"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnG2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Open settings"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:cardCornerRadius="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                    <TextView android:layout_width="30dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_circle" android:text="3" android:textColor="?attr/colorOnPrimary" android:textStyle="bold"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Keep it running (recommended)" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvG3Status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:lineSpacingExtra="3dp" android:text="লক যেন বন্ধ হয়ে না যায়, সেজন্য:&#10;১) “Battery settings” চেপে Planora-কে “Unrestricted / No restrictions” দিন।&#10;২) Redmi/Xiaomi, Oppo, Vivo, Samsung ফোনে “App info” → Autostart / Battery → চালু করুন।"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnG3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Battery settings"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:cardCornerRadius="20dp" app:cardBackgroundColor="?attr/colorPrimaryContainer">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_info" app:tint="?attr/colorOnPrimaryContainer" android:contentDescription="Tip"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="টিপ: সুইচ বন্ধ/ধূসর দেখালে" android:textStyle="bold" android:textColor="?attr/colorOnPrimaryContainer"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:lineSpacingExtra="3dp" android:textColor="?attr/colorOnPrimaryContainer" android:text="যদি অনুমতির সুইচ ধূসর (বন্ধ) দেখায়, তাহলে: “App info” খুলে উপরের ডানদিকে ⋮ (তিন ডট) চাপুন → “Allow restricted settings” চাপুন। (Android 13+ এ APK ফাইল থেকে ইনস্টল করা অ্যাপে এটা লাগে।) তারপর আবার ধাপ ১/২ করুন।"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnTipAppInfo" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Open App info"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnGDone" style="@style/Widget.Material3.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Close"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

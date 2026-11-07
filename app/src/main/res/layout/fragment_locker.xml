@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="?attr/colorSurface">
+    <LinearLayout android:id="@+id/content" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:background="@drawable/bg_header" android:padding="20dp" android:paddingBottom="28dp">
+            <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="10dp" android:background="@drawable/bg_circle_white" android:src="@drawable/ic_lock" app:tint="?attr/colorPrimary" android:contentDescription="Lock"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="App Locker" android:textColor="@color/white" android:textAppearance="?attr/textAppearanceTitleLarge" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvState" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:alpha="0.85" android:text="Protect your apps with a password"/>
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="12dp" app:cardCornerRadius="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switchLock" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enable App Lock" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp"/>
+                <TextView android:id="@+id/tvOverlay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="6dp">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnGuide" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="How to allow permissions"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnChangePass" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Change password"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.textfield.TextInputLayout style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginEnd="12dp" android:hint="Search apps">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSearch" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:paddingTop="8dp"/>
+    </LinearLayout>
+</LinearLayout>

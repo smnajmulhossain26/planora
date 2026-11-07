@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="?attr/colorSurface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="100dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20dp" android:text="Statistics" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textStyle="bold"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp">
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="4dp" app:cardCornerRadius="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvToday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Done today" android:textAppearance="?attr/textAppearanceBodySmall" android:alpha="0.7"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="4dp" app:cardCornerRadius="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvWeek" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="This week" android:textAppearance="?attr/textAppearanceBodySmall" android:alpha="0.7"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="4dp" app:cardCornerRadius="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvMonth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="This month" android:textAppearance="?attr/textAppearanceBodySmall" android:alpha="0.7"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16dp" app:cardCornerRadius="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:padding="20dp">
+                <FrameLayout android:layout_width="88dp" android:layout_height="88dp">
+                    <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/progressRing"
+                        android:layout_width="88dp" android:layout_height="88dp" android:max="100" app:indicatorSize="88dp" app:trackThickness="9dp"/>
+                    <TextView android:id="@+id/tvPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="0%" android:textStyle="bold"/>
+                </FrameLayout>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="20dp" android:text="Overall completion of all your tasks" android:textAppearance="?attr/textAppearanceTitleMedium"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/toggle" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" app:singleSelection="true" app:selectionRequired="true">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnD" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Daily"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnW" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Weekly"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnM" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Monthly"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+        <com.planora.app.ui.BarChartView android:id="@+id/chart" android:layout_width="match_parent" android:layout_height="200dp" android:layout_margin="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20dp" android:layout_marginTop="8dp" android:text="History (completed tasks)" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvEmpty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20dp" android:layout_marginTop="8dp" android:text="No completed tasks yet" android:alpha="0.6"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvHistory" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

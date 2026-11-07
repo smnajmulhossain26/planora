@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_gradient_full">
+    <ImageView android:id="@+id/ivLogo" android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/ic_logo_white" android:contentDescription="Planora logo"/>
+    <TextView android:id="@+id/tvName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp"
+        android:text="Planora" android:textColor="@color/white" android:textAppearance="?attr/textAppearanceHeadlineLarge" android:textStyle="bold"/>
+    <TextView android:id="@+id/tvTag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp"
+        android:text="Plan smart. Work offline. Stay in sync." android:textColor="@color/white" android:alpha="0.85"/>
+</LinearLayout>

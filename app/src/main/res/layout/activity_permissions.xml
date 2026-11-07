@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="?attr/colorSurface">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:title="Permission Center" app:navigationIcon="@drawable/ic_back"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <LinearLayout android:id="@+id/headerBlock" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_header" android:padding="24dp" android:paddingTop="48dp" android:visibility="gone">
+                <ImageView android:layout_width="56dp" android:layout_height="56dp" android:src="@drawable/ic_logo_white" android:contentDescription="Logo"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Let’s set up Planora" android:textColor="@color/white" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="@color/white" android:alpha="0.9" android:text="রিমাইন্ডার ঠিকমতো পেতে নিচের অনুমতিগুলো দিন। চাইলে পরে Profile → Settings → Permission Center থেকেও দিতে পারবেন।"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="11dp" android:background="@drawable/bg_circle_soft" android:src="@drawable/ic_bell" app:tint="?attr/colorPrimary" android:contentDescription="Notifications"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Notifications" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="রিমাইন্ডার ও অ্যালার্মের নোটিফিকেশন দেখানোর জন্য।" android:alpha="0.75"/>
+                        <TextView android:id="@+id/tvNotifStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textStyle="bold" android:textColor="?attr/colorPrimary"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnNotif" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Allow"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="11dp" android:background="@drawable/bg_circle_soft" android:src="@drawable/ic_alarm" app:tint="?attr/colorPrimary" android:contentDescription="Exact alarms"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Exact alarms" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ঠিক সময়ে রিমাইন্ডার বাজানোর জন্য (“Alarms &amp; reminders” অনুমতি)।" android:alpha="0.75"/>
+                        <TextView android:id="@+id/tvAlarmStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textStyle="bold" android:textColor="?attr/colorPrimary"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnAlarm" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Open settings"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="11dp" android:background="@drawable/bg_circle_soft" android:src="@drawable/ic_folder" app:tint="?attr/colorPrimary" android:contentDescription="File access"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="File access" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ছবি/ফাইল বেছে নেওয়ার সময় Android-এর নিজস্ব Picker খোলে, তাই আলাদা ফাইল পারমিশন লাগে না। আপনার বাকি ফাইল সম্পূর্ণ নিরাপদ।" android:alpha="0.75"/>
+                        <TextView android:id="@+id/tvFileStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textStyle="bold" android:textColor="?attr/colorPrimary"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnFile" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Open settings"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="11dp" android:background="@drawable/bg_circle_soft" android:src="@drawable/ic_battery" app:tint="?attr/colorPrimary" android:contentDescription="Battery optimization"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Battery optimization" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ঐচ্ছিক। কিছু ফোনে ব্যাটারি সেভার রিমাইন্ডার দেরি করাতে পারে।" android:alpha="0.75"/>
+                        <TextView android:id="@+id/tvBatteryStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textStyle="bold" android:textColor="?attr/colorPrimary"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnBattery" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Open settings"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="11dp" android:background="@drawable/bg_circle_soft" android:src="@drawable/ic_lock" app:tint="?attr/colorPrimary" android:contentDescription="Usage access (App Locker)"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Usage access (App Locker)" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="শুধু App Locker-এর জন্য। App Lock চালু করার সময় ধাপে ধাপে দেখানো হবে।" android:alpha="0.75"/>
+                        <TextView android:id="@+id/tvUsageStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textStyle="bold" android:textColor="?attr/colorPrimary"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnUsage" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Open settings"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Planora.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:layout_width="44dp" android:layout_height="44dp" android:padding="11dp" android:background="@drawable/bg_circle_soft" android:src="@drawable/ic_lock" app:tint="?attr/colorPrimary" android:contentDescription="Display over other apps (App Locker)"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Display over other apps (App Locker)" android:textAppearance="?attr/textAppearanceTitleMedium" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="শুধু App Locker-এর জন্য। লক স্ক্রিন দেখানোর জন্য।" android:alpha="0.75"/>
+                        <TextView android:id="@+id/tvOverlayStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textStyle="bold" android:textColor="?attr/colorPrimary"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnOverlay" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Open settings"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnContinue" android:layout_width="match_parent" android:layout_height="56dp" android:layout_margin="16dp" android:text="Continue" android:visibility="gone"/>
+</LinearLayout>
